@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
+
+html {
+  overflow-x: hidden;
+}
+
 /*==========================================
 
    RESET Y FUENTES
@@ -13,13 +19,23 @@
   box-sizing: border-box;
 
 }
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   line-height: 1.5;
   background-color: #ffffff;
   color: #000000;
+  overflow-x: hidden;
+}
+
+.pagina-servicios {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.pagina-servicios main {
+  flex: 1;
 }
 
 
@@ -30,6 +46,14 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+.imagen-presentacion-index {
+  width: auto;
+  max-width: 100%;
+  max-height: 240px;
+  object-fit: contain;
+  margin: 0 auto;
 }
 
 /* ==========================================
@@ -57,6 +81,96 @@ img {
   color: #474747;
 }
 
+.texto-nav-marca,
+.texto-menu-titulo,
+.texto-nav-inicio,
+.texto-nav-sobre-mi,
+.texto-nav-proyectos,
+.texto-nav-servicios,
+.texto-nav-contacto,
+.titulo-presentacion,
+.titulo-saludo,
+.texto-presentacion-intro,
+.texto-presentacion-descripcion,
+.texto-presentacion-motivacion,
+.texto-presentacion-invitacion,
+.titulo-servicios,
+.titulo-servicio-uxui,
+.texto-servicio-uxui,
+.titulo-servicio-web,
+.texto-servicio-web,
+.titulo-servicio-grafico,
+.texto-servicio-grafico,
+.titulo-redes-sociales,
+.texto-red-facebook,
+.texto-red-instagram,
+.texto-red-x,
+.texto-copyright,
+.texto-horarios {
+  letter-spacing: normal;
+}
+
+.texto-nav-marca {
+  font-size: 1rem;
+}
+
+.texto-menu-titulo {
+  font-size: 1.25rem;
+}
+
+.texto-nav-inicio,
+.texto-nav-sobre-mi,
+.texto-nav-proyectos,
+.texto-nav-servicios,
+.texto-nav-contacto {
+  font-size: 0.8rem;
+}
+
+.titulo-presentacion,
+.titulo-servicios,
+.titulo-redes-sociales {
+  font-size: 1.125rem;
+}
+
+.titulo-presentacion,
+.titulo-saludo {
+  color: #6e2aad;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.texto-presentacion-descripcion,
+.texto-presentacion-motivacion,
+.texto-servicio-uxui,
+.texto-servicio-web,
+.texto-servicio-grafico {
+  font-size: 1rem;
+}
+
+.texto-presentacion-descripcion,
+.texto-presentacion-motivacion {
+  line-height: 1.8;
+  font-weight: 510;
+}
+
+.card-body .texto-presentacion-invitacion {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.texto-red-facebook,
+.texto-red-instagram,
+.texto-red-x {
+  font-size: 1rem;
+}
+
+.texto-copyright,
+.texto-horarios {
+  font-size: 0.75rem;
+}
+
 /* ==========================================
 
    HEADER Y NAV (Mobile-First)
@@ -64,7 +178,6 @@ img {
    ========================================== */
 
 .header-principal {
-  background-color: #000000;
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
@@ -85,10 +198,11 @@ img {
 
 .menu-navegacion {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   /* Apila los links uno debajo del otro */
   /* Los centra horizontalmente */
-  list-style: none;
+    font-size: 1.125rem;
+    font-weight: 800;
   gap: 0.75rem;
   /* Espaciado vertical entre links */
   width: 100%;
@@ -110,7 +224,7 @@ img {
 /* ==========================================
 
    MAIN Y SECCIONES (Mobile-First: 1 Columna)
-
+  flex-direction: column;
    ========================================== */
 
 main {
@@ -145,11 +259,11 @@ main {
   grid-area: foto;
 }
 
-.seccion-contenedor:has(.foto-presentacion)>p:nth-of-type(1) {
+.seccion-contenedor:has(.foto-presentacion)>div>p:nth-of-type(1) {
   grid-area: texto1;
 }
 
-.seccion-contenedor:has(.foto-presentacion)>p:nth-of-type(2) {
+.seccion-contenedor:has(.foto-presentacion)>div>p:nth-of-type(2) {
   grid-area: texto2;
 }
 
@@ -170,7 +284,6 @@ p {
 }
 
 /* --- GRID  PARA LAS TARJETAS DE PROYECTOS --- */
-
 .tarjeta-proyecto {
   display: grid;
   grid-template-areas:
@@ -220,18 +333,43 @@ p {
    ========================================== */
 
 .footer-principal {
-  background-color: #acaeaf;
+  background-color: #6e2aad;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   gap: 1rem;
 }
 
+.footer-principal .titulo-terciario,
+.footer-principal a,
+.footer-principal .copyright,
+.footer-principal .copyright p {
+  color: #ffffff;
+}
+
+.footer-principal .text-muted {
+  color: #ffffff !important;
+}
+
+.footer-principal .titulo-terciario,
+.footer-principal a,
+.footer-principal .copyright,
+.footer-principal .copyright p {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
 .contenedor-footer {
+  flex: 1;
   padding: 1.25rem 1.25rem 0 1.25rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5rem;
-  align-items: center;
+  align-items: baseline;
 }
 
 .redes-lista {
@@ -241,83 +379,24 @@ p {
 }
 
 .redes-lista a {
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .redes-lista a:hover {
-  color: #6e2aad;
+  color: #ffffff;
 }
 
 .copyright {
-  background-color: #000000;
+  background-color: #6e2aad;
   color: #ffffff;
   text-align: center;
   padding: 1rem;
-  font-size: 0.75rem;
+  margin-top: 0 !important;
 }
 
-/* ==========================================
-   BREAKPOINT DESKTOP (min-width: 320px)
-      ========================================== */
-
-@media (min-width: 320px) {
-  .menu-navegacion {
-    display: flex;
-    flex-wrap: nowrap;
-    /* Obliga a mantener todo en 1 sola fila */
-    overflow-x: auto;
-    list-style: none;
-    gap: 0.85rem;
-    padding-bottom: 0.25rem;
-    width: 100%;
-    justify-content: space-between;
-      }
-  .enlace-navegacion {
-    font-weight: 600;
-    color:#000000;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-
-  .enlace-navegacion:hover {
-    color: #6e2aad;
-  }
-
-  .header-principal {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 3rem;
-  }
-
-    .header-principal {
-    gap: 1rem;
-  }
-
-  .marca-contenedor {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex: 1 1 auto;
-       min-width: 0;
-      }
-
-  .marca-contenedor>div {
-    min-width: 0;
-       overflow: hidden;
-  }
-
-  nav {
-    flex: 0 0 auto;
-  }
-  .logo-contenedor img {
-    max-height: 2.75rem;
-    width: auto;
-    display: block;
-  }
-
+@media (min-width: 768px) {
   main {
     max-width: 1200px;
     margin: 0 auto;
@@ -325,47 +404,26 @@ p {
     gap: 3rem;
   }
 
-  
   .seccion-contenedor:has(.foto-presentacion) {
-    grid-template-areas:
-      "titulo  titlo"
-      "foto    texto1"
-      "foto    texto2";
-    /* columnas fluidas: 1fr para imagen, 2fr para contenido (responsive) */
+    grid-template-areas: "titulo titulo" "foto texto";
     grid-template-columns: 1fr minmax(0, 2fr);
-    gap: 1.5rem;
-    /* gap global (row) */
     column-gap: 2.5rem;
-    /* separación entre columnas */
     align-items: start;
   }
 
-  /* GALERÍA DE PROYECTOS */
-  /* Reorganiza las imágenes en un grid fluido de 2 a 4 columnas según espacio */
+  .seccion-contenedor:has(.foto-presentacion) > div {
+    grid-area: texto;
+  }
+
   .galeria-proyectos {
     grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
     gap: 1.5rem;
   }
 
-  CSS
-/* Altura fija y fondo uniforme para las imágenes del carrusel Flexy */
-#carouselFlexy .carousel-item {
-    height: 480px; /* Podés ajustar la altura que prefieras (ej: 400px o 500px) */
-    background-color: #1e1e1e; /* Fondo oscuro elegante para rellenar los bordes en verticales */
-}
-
-#carouselFlexy .carousel-item img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain; /* Muestra la imagen entera sin deformar ni recortar */
-}
-
-  /*  FOOTER EN ESCRITORIO */
   .footer-principal {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: #acaeaf;
   }
 
   .contenedor-footer {
@@ -373,22 +431,72 @@ p {
     flex-direction: row;
     gap: 1.5rem;
   }
- .copyright {
+
+  .copyright {
+    margin-top: 0 !important;
     padding: 1.25rem 2rem;
     background-color: transparent;
-    color: #000000;
+    color: #ffffff;
     text-align: right;
   }
-  /* Evitar pixelado de imágenes en pantallas grandes */
-  .foto-presentacion img,
-  .galeria-proyectos img {
-    max-width: 60rem;
-    /* límite en rem para mantener fluidez */
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    margin: 0 auto;
-    display: block;
+}
+
+@media (min-width: 992px) {
+  .header-principal {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
   }
 
+  .header-principal nav {
+    flex: 0 0 auto;
+  }
+
+  .navbar-toggler {
+    display: none;
+  }
+
+  .header-principal .offcanvas {
+    position: static;
+    visibility: visible;
+    transform: none;
+    background-color: transparent;
+    border: 0;
+  }
+
+  .header-principal .offcanvas-header {
+    display: none;
+  }
+
+  .header-principal .offcanvas-body {
+    display: flex;
+    padding: 0;
+  }
+
+  .menu-navegacion {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.85rem;
+    justify-content: space-between;
+  }
+
+}
+
+.carousel-proyecto .carousel-inner {
+  background-color: #f4f4f4;
+}
+
+.carousel-proyecto .carousel-item img {
+  width: auto;
+  max-width: 100%;
+  max-height: 420px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  .carousel-proyecto .carousel-item img {
+    max-height: 320px;
+  }
 }
