@@ -410,6 +410,24 @@ main {
   font-weight: 400;
 }
 
+.formacion-contenedor {
+  width: 100%;
+  text-align: right;
+}
+
+.formacion-contenedor .titulo-terciario {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #6e2aad;
+  margin-bottom: 0.5rem;
+}
+
+.lista-formacion .list-group-item {
+  text-align: right;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
 
 .seccion-contenedor:has(.foto-presentacion) {
   display: grid;
@@ -611,6 +629,10 @@ p {
   .seccion-sobre-mi > p {
     grid-area: texto;
     align-self: center;
+  }
+
+  .seccion-sobre-mi .formacion-contenedor {
+    grid-column: 2;
   }
 
   .seccion-contenedor:has(.foto-presentacion) > div {
