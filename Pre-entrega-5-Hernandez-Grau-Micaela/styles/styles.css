@@ -28,6 +28,11 @@ body {
   overflow-x: hidden;
 }
 
+::selection {
+  background-color: #e0b1cb;
+  color: #000000;
+}
+
 .pagina-servicios {
   min-height: 100vh;
   display: flex;
@@ -36,6 +41,12 @@ body {
 
 .pagina-servicios main {
   flex: 1;
+}
+
+.pagina-proyectos main,
+.pagina-proyectos .contenedor-footer,
+.pagina-proyectos .copyright {
+  text-align: center;
 }
 
 
@@ -184,6 +195,12 @@ img {
   gap: 1rem;
 }
 
+.header-principal .navbar,
+.header-principal .navbar .container-fluid,
+.header-principal .offcanvas {
+  background-color: #ffffff;
+}
+
 .marca-contenedor {
   display: flex;
   align-items: center;
@@ -220,6 +237,74 @@ img {
 
 .enlace-navegacion:hover {
   color: #6e2aad;
+}
+
+.enlace-navegacion {
+  transition: color 0.35s ease, background-color 0.35s ease, font-weight 0.35s ease;
+}
+
+.enlace-navegacion:focus {
+  outline: 1.5px solid #000000;
+  outline-offset: 3px;
+  color: #6e2aad;
+}
+
+.enlace-navegacion:active {
+  color: hsl(164, 95%, 38%);
+  font-weight: 600;
+}
+
+.navbar-brand,
+.redes-lista a {
+  transition: color 0.35s ease, opacity 0.35s ease, font-weight 0.35s ease;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus,
+.redes-lista a:hover,
+.redes-lista a:focus {
+  color: #6e2aad;
+  opacity: 0.8;
+}
+
+.navbar-brand:focus,
+.redes-lista a:focus {
+  outline: 1.5px solid #000000;
+  outline-offset: 3px;
+}
+
+.navbar-brand:active,
+.redes-lista a:active {
+  color: hsl(164, 95%, 38%);
+  font-weight: 600;
+}
+
+.enlace-navegacion:hover,
+.navbar-brand:hover,
+.redes-lista a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+button {
+  transition: color 0.35s ease, background-color 0.35s ease, border-color 0.35s ease,
+    box-shadow 0.35s ease, transform 0.35s ease, font-weight 0.35s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:focus {
+  outline: 1.5px solid #000000;
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+button:active {
+  color: hsl(164, 95%, 38%);
+  font-weight: 600;
+  transform: translateY(0);
 }
 /* ==========================================
 
@@ -299,6 +384,7 @@ p {
 
 .tarjeta-proyecto>p {
   grid-area: desc-p;
+  font-weight: 550;
 }
 
 .tarjeta-proyecto>.galeria-proyectos {
@@ -314,6 +400,15 @@ p {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.galeria-proyectos figure:hover {
+  transform: translateY(-3px);
+}
+
+.galeria-proyectos figure:active {
+  transform: translateY(0);
 }
 
 .galeria-proyectos img {
@@ -347,10 +442,6 @@ p {
 .footer-principal .copyright,
 .footer-principal .copyright p {
   color: #ffffff;
-}
-
-.footer-principal .text-muted {
-  color: #ffffff !important;
 }
 
 .footer-principal .titulo-terciario,
@@ -393,7 +484,7 @@ p {
   color: #ffffff;
   text-align: center;
   padding: 1rem;
-  margin-top: 0 !important;
+  margin-top: 0;
 }
 
 @media (min-width: 768px) {
@@ -433,7 +524,7 @@ p {
   }
 
   .copyright {
-    margin-top: 0 !important;
+    margin-top: 0;
     padding: 1.25rem 2rem;
     background-color: transparent;
     color: #ffffff;
@@ -461,7 +552,7 @@ p {
     position: static;
     visibility: visible;
     transform: none;
-    background-color: transparent;
+    background-color: #ffffff;
     border: 0;
   }
 
@@ -499,4 +590,21 @@ p {
   .carousel-proyecto .carousel-item img {
     max-height: 320px;
   }
+}
+
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card:focus-within {
+  outline: 1.5px solid #000000;
+  outline-offset: 3px;
+}
+
+.card:active {
+  transform: translateY(0);
 }
