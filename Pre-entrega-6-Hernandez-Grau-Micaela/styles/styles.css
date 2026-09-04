@@ -87,6 +87,7 @@ body {
 
 .pagina-sobre-mi main {
   flex: 1;
+  text-align: center;
 }
 
 .pagina-proyectos main,
@@ -379,18 +380,18 @@ main {
 }
 
 .seccion-sobre-mi {
-  align-items: flex-end;
+  align-items: center;
   gap: 0.5rem;
 }
 
 .seccion-sobre-mi .titulo-secundario,
 .seccion-sobre-mi > p {
   width: 100%;
-  text-align: right;
+  text-align: center;
 }
 
 .seccion-sobre-mi figure {
-  align-self: flex-start;
+  align-self: center;
   width: 70%;
   margin: 0;
 }
@@ -412,7 +413,7 @@ main {
 
 .formacion-contenedor {
   width: 100%;
-  text-align: right;
+  text-align: center;
 }
 
 .formacion-contenedor .titulo-terciario {
@@ -423,7 +424,7 @@ main {
 }
 
 .lista-formacion .list-group-item {
-  text-align: right;
+  text-align: center;
   font-size: 0.85rem;
   font-weight: 400;
 }
@@ -619,6 +620,7 @@ p {
   .seccion-sobre-mi figure {
     grid-area: imagen;
     width: 80%;
+    justify-self: center;
   }
 
   .seccion-sobre-mi .titulo-secundario {
