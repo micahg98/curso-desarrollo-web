@@ -4,11 +4,7 @@ html {
   overflow-x: hidden;
 }
 
-/*==========================================
-
-   RESET Y FUENTES
-
-   ========================================== */
+/* RESET Y FUENTES*/
 
 * {
 
@@ -32,6 +28,8 @@ body {
   background-color: #e0b1cb;
   color: #000000;
 }
+
+/* ESTRUCTURA GENERAL DE LAS PÁGINAS: servicios, contacto, sobre mí y proyectos */
 
 .pagina-servicios {
   min-height: 100vh;
@@ -98,7 +96,7 @@ body {
 
 
 
-/* Img responsivas */
+/* IMÁGENES GENERALES Y DE LA PRESENTACIÓN: adapta las imágenes al ancho disponible */
 
 img {
   max-width: 100%;
@@ -114,11 +112,7 @@ img {
   margin: 0 auto;
 }
 
-/* ==========================================
-
-   TIPOGRAFÍA Y JERARQUÍA VISUAL
-
-   ========================================== */
+/* TIPOGRAFÍA Y JERARQUÍA VISUAL: títulos, textos, navegación y redes sociales */
 
 .titulo-principal {
   font-size: 1.125rem;
@@ -175,6 +169,8 @@ img {
   letter-spacing: normal;
 }
 
+/* Tamaños de texto para la marca y los enlaces del menú principal */
+
 .texto-nav-marca {
   font-size: 1rem;
 }
@@ -206,12 +202,18 @@ img {
   margin-bottom: 1rem;
 }
 
+/* Textos descriptivos de la presentación y de los servicios */
+
 .texto-presentacion-descripcion,
 .texto-presentacion-motivacion,
 .texto-servicio-uxui,
 .texto-servicio-web,
 .texto-servicio-grafico {
   font-size: 1rem;
+}
+
+.texto-cuerpo-inicio {
+  font-weight: 550;
 }
 
 .card-text-servicios {
@@ -230,6 +232,8 @@ img {
   margin-bottom: 1rem;
 }
 
+/* Textos del footer: redes sociales, copyright y horarios */
+
 .texto-red-facebook,
 .texto-red-instagram,
 .texto-red-x {
@@ -241,11 +245,7 @@ img {
   font-size: 0.75rem;
 }
 
-/* ==========================================
-
-   HEADER Y NAV (Mobile-First)
-
-   ========================================== */
+/* HEADER Y NAV (Mobile-First): logo, menú principal y menú offcanvas */
 
 .header-principal {
   padding: 1.25rem;
@@ -365,11 +365,7 @@ button:active {
   font-weight: 600;
   transform: translateY(0);
 }
-/* ==========================================
-
-   MAIN Y SECCIONES (Mobile-First: 1 Columna)
-  flex-direction: column;
-   ========================================== */
+/* MAIN Y SECCIONES (Mobile-First): contenido principal en una columna */
 
 main {
   padding: 1.25rem;
@@ -384,9 +380,51 @@ main {
   gap: 1rem;
 }
 
+.seccion-contenedor:has(.foto-presentacion) > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.seccion-contenedor:has(.foto-presentacion) > div > p {
+  margin-bottom: 0;
+}
+
+.seccion-servicios-inicio article {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+.seccion-servicios-inicio {
+  align-self: stretch;
+  width: 100%;
+  order: 2;
+  text-align: center;
+}
+
+.seccion-presentacion-inicio {
+  order: 1;
+  text-align: center;
+}
+
+.seccion-servicios-inicio ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.seccion-servicios-inicio li {
+  font-weight: 550;
+}
+
 .seccion-sobre-mi {
   align-items: center;
-  gap: 0.5rem;
+  gap: 1.5rem;
+  padding: 1rem;
 }
 
 .seccion-sobre-mi .titulo-secundario,
@@ -397,7 +435,7 @@ main {
 
 .seccion-sobre-mi figure {
   align-self: center;
-  width: 70%;
+  width: 62%;
   margin: 0;
 }
 
@@ -464,7 +502,13 @@ main {
 .foto-presentacion img {
   border-radius: 8px;
   width: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
+}
+
+.foto-presentacion {
+  width: min(65%, 22rem);
+  margin: 0 auto;
 }
 
 p {
@@ -477,7 +521,7 @@ p {
   margin-top: 0.25rem;
 }
 
-/* --- GRID  PARA LAS TARJETAS DE PROYECTOS --- */
+/* TARJETAS DE PROYECTOS: título, descripción y galería de cada proyecto */
 .tarjeta-proyecto {
   display: grid;
   grid-template-areas:
@@ -499,7 +543,7 @@ p {
 .tarjeta-proyecto>.galeria-proyectos {
   grid-area: galeria-p;
 }
-/* Galería en Mobile: 1 sola columna  */
+/* GALERÍA DE PROYECTOS: una columna en mobile y varias en pantallas amplias */
 .galeria-proyectos {
   display: grid;
   grid-template-columns: 1fr;
@@ -530,11 +574,7 @@ p {
   color: #474747;
 }
 
-/* ==========================================
-
-   FOOTER (Mobile-First)
-
-   ========================================== */
+/* FOOTER (Mobile-First): redes sociales y copyright */
 
 .footer-principal {
   background-color: #6e2aad;
@@ -597,6 +637,8 @@ p {
 }
 
 @media (min-width: 768px) {
+  /* TABLET Y ESCRITORIO: ancho del main, grillas y distribución del footer */
+
   main {
     max-width: 1200px;
     margin: 0 auto;
@@ -612,34 +654,28 @@ p {
   }
 
   .seccion-sobre-mi {
-    display: grid;
-    grid-template-areas:
-      "imagen titulo"
-      "imagen texto";
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
-    column-gap: 2.5rem;
-    row-gap: 0.15rem;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    padding: 1.5rem;
   }
 
   .seccion-sobre-mi figure {
-    grid-area: imagen;
-    width: 80%;
-    justify-self: center;
+    width: min(58%, 28rem);
   }
 
   .seccion-sobre-mi .titulo-secundario {
-    grid-area: titulo;
-    align-self:center;
+    width: 100%;
   }
 
   .seccion-sobre-mi > p {
-    grid-area: texto;
-    align-self: center;
+    width: min(100%, 50rem);
   }
 
   .seccion-sobre-mi .formacion-contenedor {
-    grid-column: 2;
+    width: min(100%, 60rem);
   }
 
   .seccion-contenedor:has(.foto-presentacion) > div {
@@ -673,6 +709,8 @@ p {
 }
 
 @media (min-width: 992px) {
+  /* ESCRITORIO: header horizontal y navegación desplegada */
+
   .header-principal {
     flex-direction: row;
     justify-content: space-between;
@@ -714,6 +752,8 @@ p {
 
 }
 
+/* CARRUSEL DE PROYECTOS: fondo, tamaño y ajuste de las imágenes */
+
 .carousel-proyecto .carousel-inner {
   background-color: #f4f4f4;
 }
@@ -727,10 +767,14 @@ p {
 }
 
 @media (max-width: 767px) {
+  /* CARRUSEL EN MOBILE: reduce la altura máxima de las imágenes */
+
   .carousel-proyecto .carousel-item img {
     max-height: 320px;
   }
 }
+
+/* CARDS GENERALES: animación, foco y estado activo */
 
 .card {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -747,6 +791,15 @@ p {
 
 .card:active {
   transform: translateY(0);
+}
+
+/* CARDS DE SERVICIOS: botones y estados visuales de las acciones */
+
+.pagina-servicios .card > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
 }
 
 .pagina-servicios .card .btn-primary {
@@ -770,7 +823,7 @@ p {
 .pagina-servicios .card .btn-primary:active {
   background-color: #6e2aad;
   border-color: #6e2aad;
-  color: hsl(164, 95%, 38%);
+  color: #05bd8c;
   font-weight: 600;
   transform: translateY(0);
 }
