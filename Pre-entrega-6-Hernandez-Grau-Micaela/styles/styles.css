@@ -51,11 +51,18 @@ body {
   text-align: center;
 }
 
+.pagina-contacto {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .pagina-contacto main {
   text-align: center;
   font-family: montserrat, sans-serif;
   font-weight: 600;
   font-family: montserrat, sans-serif;
+  flex: 1;
 }
 
 .pagina-contacto main figure {
