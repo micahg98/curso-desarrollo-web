@@ -1,0 +1,745 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
+
+html {
+  overflow-x: hidden;
+}
+
+/*==========================================
+
+   RESET Y FUENTES
+
+   ========================================== */
+
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: #ffffff;
+  color: #000000;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #e0b1cb;
+  color: #000000;
+}
+
+.pagina-servicios {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.pagina-servicios main {
+  flex: 1;
+  text-align: center;
+}
+
+.pagina-servicios main ul {
+  list-style: none;
+}
+
+.pagina-servicios .seccion-contenedor article > .titulo-secundario {
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.pagina-contacto main {
+  text-align: center;
+  font-family: montserrat, sans-serif;
+  font-weight: 600;
+  font-family: montserrat, sans-serif;
+}
+
+.pagina-contacto main figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  font-family: montserrat, sans-serif;
+  font-weight: 600;
+  font-family: montserrat, sans-serif;
+}
+
+
+.pagina-contacto main ul {
+  list-style: none;
+  padding-left: 0;
+  font-family: montserrat, sans-serif;
+  font-weight: 600;
+  
+}
+
+.pagina-sobre-mi {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.pagina-sobre-mi main {
+  flex: 1;
+  text-align: center;
+}
+
+.pagina-proyectos main,
+.pagina-proyectos .contenedor-footer,
+.pagina-proyectos .copyright {
+  text-align: center;
+}
+
+
+
+/* Img responsivas */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.imagen-presentacion-index {
+  width: auto;
+  max-width: 100%;
+  max-height: 240px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+/* ==========================================
+
+   TIPOGRAFÍA Y JERARQUÍA VISUAL
+
+   ========================================== */
+
+.titulo-principal {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.titulo-secundario {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #6e2aad;
+}
+
+.pagina-servicios .seccion-contenedor article .titulo-terciario {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #6e2aad;
+}
+
+.titulo-terciario {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #474747;
+}
+
+.texto-nav-marca,
+.texto-menu-titulo,
+.texto-nav-inicio,
+.texto-nav-sobre-mi,
+.texto-nav-proyectos,
+.texto-nav-servicios,
+.texto-nav-contacto,
+.titulo-presentacion,
+.titulo-saludo,
+.texto-presentacion-intro,
+.texto-presentacion-descripcion,
+.texto-presentacion-motivacion,
+.texto-presentacion-invitacion,
+.titulo-servicios,
+.titulo-servicio-uxui,
+.texto-servicio-uxui,
+.titulo-servicio-web,
+.texto-servicio-web,
+.titulo-servicio-grafico,
+.texto-servicio-grafico,
+.titulo-redes-sociales,
+.texto-red-facebook,
+.texto-red-instagram,
+.texto-red-x,
+.texto-copyright,
+.texto-horarios {
+  letter-spacing: normal;
+}
+
+.texto-nav-marca {
+  font-size: 1rem;
+}
+
+.texto-menu-titulo {
+  font-size: 1.25rem;
+}
+
+.texto-nav-inicio,
+.texto-nav-sobre-mi,
+.texto-nav-proyectos,
+.texto-nav-servicios,
+.texto-nav-contacto {
+  font-size: 0.8rem;
+}
+
+.titulo-presentacion,
+.titulo-servicios,
+.titulo-redes-sociales {
+  font-size: 1.125rem;
+}
+
+.titulo-presentacion,
+.titulo-saludo {
+  color: #6e2aad;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.texto-presentacion-descripcion,
+.texto-presentacion-motivacion,
+.texto-servicio-uxui,
+.texto-servicio-web,
+.texto-servicio-grafico {
+  font-size: 1rem;
+}
+
+.texto-presentacion-descripcion,
+.texto-presentacion-motivacion {
+  line-height: 1.8;
+  font-weight: 510;
+}
+
+.card-body .texto-presentacion-invitacion {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.texto-red-facebook,
+.texto-red-instagram,
+.texto-red-x {
+  font-size: 1rem;
+}
+
+.texto-copyright,
+.texto-horarios {
+  font-size: 0.75rem;
+}
+
+/* ==========================================
+
+   HEADER Y NAV (Mobile-First)
+
+   ========================================== */
+
+.header-principal {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.header-principal .navbar,
+.header-principal .navbar .container-fluid,
+.header-principal .offcanvas {
+  background-color: #ffffff;
+}
+
+.marca-contenedor {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-contenedor figcaption {
+  font-size: 10px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.menu-navegacion {
+  display: flex;
+  flex-direction: column;
+  /* Apila los links uno debajo del otro */
+  /* Los centra horizontalmente */
+    font-size: 1.125rem;
+    font-weight: 800;
+  gap: 0.75rem;
+  /* Espaciado vertical entre links */
+  width: 100%;
+  padding-left: 0;
+}
+
+.enlace-navegacion {
+  font-size: 0.8rem;
+  white-space: nowrap;
+  font-weight: 600;
+  color: #6e2aad;
+  text-decoration: none;
+  padding: 0.25rem 0;
+  }
+
+.enlace-navegacion:hover {
+  color: #6e2aad;
+}
+
+.enlace-navegacion {
+  transition: color 0.35s ease, background-color 0.35s ease, font-weight 0.35s ease;
+}
+
+.enlace-navegacion:focus {
+  outline: 1.5px solid #000000;
+  outline-offset: 3px;
+  color: #6e2aad;
+}
+
+.enlace-navegacion:active {
+  color: hsl(164, 95%, 38%);
+  font-weight: 600;
+}
+
+.navbar-brand,
+.redes-lista a {
+  transition: color 0.35s ease, opacity 0.35s ease, font-weight 0.35s ease;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus,
+.redes-lista a:hover,
+.redes-lista a:focus {
+  color: #6e2aad;
+  opacity: 0.8;
+}
+
+.navbar-brand:focus,
+.redes-lista a:focus {
+  outline: 1.5px solid #000000;
+  outline-offset: 3px;
+}
+
+.navbar-brand:active,
+.redes-lista a:active {
+  color: hsl(164, 95%, 38%);
+  font-weight: 600;
+}
+
+.enlace-navegacion:hover,
+.navbar-brand:hover,
+.redes-lista a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+button {
+  transition: color 0.35s ease, background-color 0.35s ease, border-color 0.35s ease,
+    box-shadow 0.35s ease, transform 0.35s ease, font-weight 0.35s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:focus {
+  outline: 1.5px solid #000000;
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+button:active {
+  color: hsl(164, 95%, 38%);
+  font-weight: 600;
+  transform: translateY(0);
+}
+/* ==========================================
+
+   MAIN Y SECCIONES (Mobile-First: 1 Columna)
+  flex-direction: column;
+   ========================================== */
+
+main {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.seccion-contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.seccion-sobre-mi {
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.seccion-sobre-mi .titulo-secundario,
+.seccion-sobre-mi > p {
+  width: 100%;
+  text-align: center;
+}
+
+.seccion-sobre-mi figure {
+  align-self: center;
+  width: 70%;
+  margin: 0;
+}
+
+.seccion-sobre-mi figure img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.seccion-sobre-mi > p {
+  font-weight: 550;
+}
+
+.seccion-sobre-mi figcaption {
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+.formacion-contenedor {
+  width: 100%;
+  text-align: center;
+}
+
+.formacion-contenedor .titulo-terciario {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #6e2aad;
+  margin-bottom: 0.5rem;
+}
+
+.lista-formacion .list-group-item {
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+
+.seccion-contenedor:has(.foto-presentacion) {
+  display: grid;
+  grid-template-areas:
+    "titulo"
+    "foto"
+    "texto1"
+    "texto2";
+  gap: 1rem;
+}
+
+.seccion-contenedor:has(.foto-presentacion)>.titulo-secundario {
+  grid-area: titulo;
+}
+
+.seccion-contenedor:has(.foto-presentacion)>.foto-presentacion {
+  grid-area: foto;
+}
+
+.seccion-contenedor:has(.foto-presentacion)>div>p:nth-of-type(1) {
+  grid-area: texto1;
+}
+
+.seccion-contenedor:has(.foto-presentacion)>div>p:nth-of-type(2) {
+  grid-area: texto2;
+}
+
+.foto-presentacion img {
+  border-radius: 8px;
+  width: 100%;
+  object-fit: cover;
+}
+
+p {
+  margin-bottom: 0.5rem;
+}
+
+.foto-presentacion figcaption {
+  font-size: 0.75rem;
+  color: #474747;
+  margin-top: 0.25rem;
+}
+
+/* --- GRID  PARA LAS TARJETAS DE PROYECTOS --- */
+.tarjeta-proyecto {
+  display: grid;
+  grid-template-areas:
+    "titulo-p"
+    "desc-p"
+    "galeria-p";
+  gap: 1rem;
+}
+
+.tarjeta-proyecto>.titulo-terciario {
+  grid-area: titulo-p;
+}
+
+.tarjeta-proyecto>p {
+  grid-area: desc-p;
+  font-weight: 550;
+}
+
+.tarjeta-proyecto>.galeria-proyectos {
+  grid-area: galeria-p;
+}
+/* Galería en Mobile: 1 sola columna  */
+.galeria-proyectos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+.galeria-proyectos figure {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.galeria-proyectos figure:hover {
+  transform: translateY(-3px);
+}
+
+.galeria-proyectos figure:active {
+  transform: translateY(0);
+}
+
+.galeria-proyectos img {
+  border-radius: 8px;
+  width: 100%;
+  object-fit: cover;
+}
+.galeria-proyectos figcaption {
+  font-size: 0.75rem;
+  color: #474747;
+}
+
+/* ==========================================
+
+   FOOTER (Mobile-First)
+
+   ========================================== */
+
+.footer-principal {
+  background-color: #6e2aad;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-principal .titulo-terciario,
+.footer-principal a,
+.footer-principal .copyright,
+.footer-principal .copyright p {
+  color: #ffffff;
+}
+
+.footer-principal .titulo-terciario,
+.footer-principal a,
+.footer-principal .copyright,
+.footer-principal .copyright p {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.contenedor-footer {
+  flex: 1;
+  padding: 1.25rem 1.25rem 0 1.25rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.redes-lista {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.redes-lista a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.redes-lista a:hover {
+  color: #ffffff;
+}
+
+.copyright {
+  background-color: #6e2aad;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    gap: 3rem;
+  }
+
+  .seccion-contenedor:has(.foto-presentacion) {
+    grid-template-areas: "titulo titulo" "foto texto";
+    grid-template-columns: 1fr minmax(0, 2fr);
+    column-gap: 2.5rem;
+    align-items: start;
+  }
+
+  .seccion-sobre-mi {
+    display: grid;
+    grid-template-areas:
+      "imagen titulo"
+      "imagen texto";
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+    column-gap: 2.5rem;
+    row-gap: 0.15rem;
+    align-items: start;
+  }
+
+  .seccion-sobre-mi figure {
+    grid-area: imagen;
+    width: 80%;
+    justify-self: center;
+  }
+
+  .seccion-sobre-mi .titulo-secundario {
+    grid-area: titulo;
+    align-self:center;
+  }
+
+  .seccion-sobre-mi > p {
+    grid-area: texto;
+    align-self: center;
+  }
+
+  .seccion-sobre-mi .formacion-contenedor {
+    grid-column: 2;
+  }
+
+  .seccion-contenedor:has(.foto-presentacion) > div {
+    grid-area: texto;
+  }
+
+  .galeria-proyectos {
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 1.5rem;
+  }
+
+  .footer-principal {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contenedor-footer {
+    padding: 1.25rem 2rem;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .copyright {
+    margin-top: 0;
+    padding: 1.25rem 2rem;
+    background-color: transparent;
+    color: #ffffff;
+    text-align: right;
+  }
+}
+
+@media (min-width: 992px) {
+  .header-principal {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+  }
+
+  .header-principal nav {
+    flex: 0 0 auto;
+  }
+
+  .navbar-toggler {
+    display: none;
+  }
+
+  .header-principal .offcanvas {
+    position: static;
+    visibility: visible;
+    transform: none;
+    background-color: #ffffff;
+    border: 0;
+  }
+
+  .header-principal .offcanvas-header {
+    display: none;
+  }
+
+  .header-principal .offcanvas-body {
+    display: flex;
+    padding: 0;
+  }
+
+  .menu-navegacion {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.85rem;
+    justify-content: space-between;
+  }
+
+}
+
+.carousel-proyecto .carousel-inner {
+  background-color: #f4f4f4;
+}
+
+.carousel-proyecto .carousel-item img {
+  width: auto;
+  max-width: 100%;
+  max-height: 420px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  .carousel-proyecto .carousel-item img {
+    max-height: 320px;
+  }
+}
+
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card:focus-within {
+  outline: 1.5px solid #000000;
+  outline-offset: 3px;
+}
+
+.card:active {
+  transform: translateY(0);
+}
